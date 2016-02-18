@@ -12,7 +12,6 @@ var charRequest = document.getElementById("char");
 // ------------- Click on the "Grow Tree" button -------------- //
 
 var growButton = document.getElementById("btn");
-var seed = document.getElementById("seed");
 
 growButton.addEventListener("click", function() {
 
@@ -23,7 +22,7 @@ growButton.addEventListener("click", function() {
 
 var inputKeyUp = function(e) {
   e.which = e.which || e.keyCode;
-  if(e.which === 13) {
+  if(e.which === 13) {     // keyCode 13 is the Enter key
 
     verifyInputBeforeBuild();
   }

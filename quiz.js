@@ -16,14 +16,7 @@ var seed = document.getElementById("seed");
 
 growButton.addEventListener("click", function() {
 
-   // ----------- Check for inputs in both fields ----------------//
-  if (heightRequest.value === "" || charRequest.value === "") {
-    alert("Both fields need a value, dumb-ass!")
-  }
-  else {
-    buildTree(heightRequest.value, charRequest.value);
-  }
-
+  verifyInputBeforeBuild();
 });
 
 // ------------ Function for catching ENTER key press ----------------//
@@ -31,7 +24,8 @@ growButton.addEventListener("click", function() {
 var inputKeyUp = function(e) {
   e.which = e.which || e.keyCode;
   if(e.which === 13) {
-    buildTree(heightRequest.value, charRequest.value);
+
+    verifyInputBeforeBuild();
   }
 }
 
@@ -46,6 +40,19 @@ var buildTree = function(height, char) {
       i -= 1;
   }
 }
+
+// ------------- Function that checks for input in both fields before building ------//
+
+var verifyInputBeforeBuild = function() {
+  if (heightRequest.value === "" || charRequest.value === "") {
+    alert("Both fields need a value before we can build your tree.")
+  }
+  else {
+    buildTree(heightRequest.value, charRequest.value);
+  }
+}
+
+
 
 
 

@@ -1,12 +1,12 @@
 
 // --- Set the height input box as a variable ---- //
 
-var heightRequest = document.getElementById("height");
+var heightInput = document.getElementById("height");
 
 
 // --- Set the character input box as a variable  ------ //
 
-var charRequest = document.getElementById("char");
+var charInput = document.getElementById("char");
 
 
 // ------------- Click on the "Grow Tree" button -------------- //
@@ -21,40 +21,31 @@ growButton.addEventListener("click", function() {
 // // ------------ Event listener for catching ENTER key press on HEIGHT ----------------//
 
 
-// var heightInput = document.getElementById("height");
+  heightInput.addEventListener("keypress", function(event) {
+    if (event.keyCode === 13)
 
-//   heightInput.addEventListener("click", function() {
+    growButton.click();
 
-//   inputKeyUp();
-// });
-
-// // ------------ Event listener for catching ENTER key press on HEIGHT ----------------//
+});
 
 
-// var charInput = document.getElementById("char");
+// ------------ Event listener for catching ENTER key press on CHARACTER input ----------------//
 
-//   charInput.addEventListener("click", function() {
 
-//   inputKeyUp();
-// });
+  charInput.addEventListener("keypress", function(event) {
+    if (event.keyCode === 13)
 
-// // ------------ Function for catching ENTER key press  --------------------------//
+      growButton.click();
 
-// var inputKeyUp = function(e) {
-//   //e.which = e.which || e.keyCode;
-//   if(e.keyCode === 13) {     // keyCode 13 is the Enter key
-
-//     verifyInputBeforeBuild();
-//   }
-// }
+});
 
 
 // ------------ Click on the CLEAR button ----------------//
 
 
-var charInput = document.getElementById("clr");
+var clearInput = document.getElementById("clr");
 
-  charInput.addEventListener("click", function() {
+  clearInput.addEventListener("click", function() {
 
    alert("You pushed the clear button");
 });
@@ -75,14 +66,14 @@ var buildTree = function(height, char) {
 // ------------- Function that checks for input in both fields before building ------//
 
 var verifyInputBeforeBuild = function() {
-  if (heightRequest.value === "" || charRequest.value === "") {
+  if (heightInput.value === "" || charInput.value === "") {
     alert("Both fields need a value before we can build your tree.");
   }
-  else if(isNaN(heightRequest.value)) {
+  else if(isNaN(heightInput.value)) {
     alert("Please enter a number for your desired tree height.");
   }
   else {
-    buildTree(heightRequest.value, charRequest.value);
+    buildTree(heightInput.value, charInput.value);
   }
 }
 

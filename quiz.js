@@ -47,12 +47,17 @@ var clearInput = document.getElementById("clr");
 
   clearInput.addEventListener("click", function() {
 
-   alert("You pushed the clear button");
+   clearPage();
 });
 
+// ------------- Function that clears the two inputs ---------//
 
+var clearPage = function() {
+  heightInput.value = "";
+  charInput.value = "";
+}
 
-// ------------ Function that actually builds the tree in the console -----//
+// ------------ Function that actually builds the tree in the console ---------------//
 
 var buildTree = function(height, char) {
 

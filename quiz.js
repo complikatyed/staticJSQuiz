@@ -105,6 +105,9 @@ var verifyInputBeforeBuild = function(myObj) {
   else if(myObj.height.length !== 1) {
     alert("Please enter a number from 1-9.");
   }
+  else if(myObj.char.length !== 1) {
+    alert("Please choose only one character.");
+  }
   else {
     buildTree(myObj);
   }
